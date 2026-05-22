@@ -19,7 +19,7 @@ public class Serie extends Contenido {
 //********************************************
 
     @Override
-    public Double calcularCostoDeLicencia() {
+    public Double doCostoExtra() {
         return this.temporadas.stream()
                               .mapToDouble(Temporada::calcularCostoDeTemporada)
                               .average()

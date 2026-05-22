@@ -21,5 +21,10 @@ public abstract class Contenido {
 
 //********************************************
 
-    public abstract Double calcularCostoDeLicencia();
+    // Template Method
+    public Double calcularCostoDeLicencia() {
+        return this.costoBase + doCostoExtra();
+    }
+
+    public abstract Double doCostoExtra();
 }

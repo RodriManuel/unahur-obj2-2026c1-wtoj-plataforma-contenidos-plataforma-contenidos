@@ -20,8 +20,8 @@ public class Documental extends Contenido {
 //********************************************
 
     @Override
-    public Double calcularCostoDeLicencia() {
-        return this.costoBase + canonIDRA;
+    public Double doCostoExtra() {
+        return canonIDRA;
     }
 
 }

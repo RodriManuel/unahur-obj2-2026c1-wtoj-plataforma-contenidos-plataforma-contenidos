@@ -11,8 +11,8 @@ public class Pelicula extends Contenido {
 //********************************************
 
     @Override
-    public Double calcularCostoDeLicencia() {
-        return this.costoBase;
+    public Double doCostoExtra() {
+        return 0.0;
     }
 
 
