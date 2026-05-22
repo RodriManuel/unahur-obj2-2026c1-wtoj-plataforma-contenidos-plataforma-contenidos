@@ -1,12 +1,13 @@
 package ar.edu.unahur.obj2.w2j.planes;
 
-public class PlanBasicoStrategy implements PlanStrategy {
-    private Integer limiteDeContenido;
-    private Double costoMensualBase;
+import java.util.List;
 
-    public PlanBasicoStrategy(Integer limiteDeContenido, Double costoMensualBase) {
-        this.limiteDeContenido = limiteDeContenido;
-        this.costoMensualBase = costoMensualBase;
+import ar.edu.unahur.obj2.w2j.contenidos.Contenido;
+
+public class PlanBasicoStrategy extends PlanConLimiteStrategy {
+
+    public PlanBasicoStrategy(Integer limiteDeContenidos) {
+        super(limiteDeContenidos);
     }
 
 //********************************************
@@ -14,7 +15,7 @@ public class PlanBasicoStrategy implements PlanStrategy {
 //********************************************
 
     @Override
-    public Double costoMensualTotal(Usuario usuario) {
-        return 0.0;
+    protected Double aplicarAjuste(Double total) {
+        return total;
     }
 }
