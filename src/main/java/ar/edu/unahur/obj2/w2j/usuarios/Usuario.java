@@ -8,7 +8,7 @@ import ar.edu.unahur.obj2.w2j.planes.PlanStrategy;
 
 public class Usuario {
     private PlanStrategy planContratado;
-    private List<Contenido> listaDeContenidosConsumidos = new ArrayList<>();
+    private List<Contenido> contenidosConsumidos = new ArrayList<>();
 
     public Usuario(PlanStrategy planContratado) {
         this.planContratado = planContratado;
@@ -20,10 +20,23 @@ public class Usuario {
         return planContratado;
     }
 
-    public List<Contenido> getListaDeContenidosConsumidos() {
-        return listaDeContenidosConsumidos;
+    public List<Contenido> getContenidosConsumidos() {
+        return new ArrayList<>(contenidosConsumidos);
+    }
+
+    public void cambiarPlanContratado(PlanStrategy nuevoPlan) {
+        this.planContratado = nuevoPlan;
     }
     
 //********************************************
 
+    public Double calcularCostoMensual() {
+        Double costoDePlanContratado = planContratado.costoMensualTotal(this);
+
+        return costoDePlanContratado;
+    }
+
+    public void limpiarListaDeContenidosConsumidos() {
+        this.contenidosConsumidos.clear();
+    }
 }
